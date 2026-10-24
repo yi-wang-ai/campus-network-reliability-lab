@@ -1,0 +1,19 @@
+name: Bug report
+description: Report a reproducible problem in the lab
+title: "bug: "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Include the command and expected versus actual result.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment and evidence
+      description: Linux distribution, Docker and Containerlab versions; remove sensitive details.
+    validations:
+      required: true
