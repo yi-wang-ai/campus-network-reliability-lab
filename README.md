@@ -68,6 +68,16 @@ docs/          Architecture, demo walkthrough, troubleshooting
 - **No shell=True.** Docker commands are built as argument lists. Only the five known lab containers are reachable.
 - **Fake runner for tests.** A protocol-based Runner lets all scenario logic run against a deterministic fake, with no Docker dependency.
 
+## Verified Results
+
+- **33 unit tests pass** — route parsing, OSPF neighbor detection, failover sequencing, recovery-after-failure, timeout handling, input validation, Docker command safety, CLI error paths, JSON evidence serialization
+- **Static validation pass** — `campus-net validate` checks topology YAML, IP addressing, subnet consistency, OSPF advertisements, router IDs, and passive interfaces against the FRR configs
+
+### Limitations
+
+- **Requires Linux host.** Containerlab uses Linux network namespaces (`ip netns`) and cannot run on macOS Docker Desktop or Windows WSL2 Docker. Integration testing (live OSPF failover) requires a Linux VM or bare-metal Linux with Docker and Containerlab installed.
+- **No live failover test included in CI.** GitHub Actions runs unit tests and static validation only. The full OSPF failover demo (`campus-net demo`) requires a Containerlab-capable host.
+
 ## Docs
 
 [Architecture](docs/ARCHITECTURE.md) · [Demo Guide](docs/DEMO.md) · [Test Report](docs/TEST_REPORT.md) · [Troubleshooting](docs/TROUBLESHOOTING.md)
