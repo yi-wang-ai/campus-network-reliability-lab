@@ -82,6 +82,10 @@ docs/          Architecture, demo walkthrough, troubleshooting
 
 [Architecture](docs/ARCHITECTURE.md) · [Demo Guide](docs/DEMO.md) · [Test Report](docs/TEST_REPORT.md) · [Troubleshooting](docs/TROUBLESHOOTING.md)
 
+## Ownership
+
+This project was designed and built by Yi Wang as a portfolio demonstration. The Python CLI (route parsing, failover scenario, config validator), FRR router configurations, Containerlab topology, tests, and documentation are original work. It uses the following upstream software: Containerlab, FRRouting, and Docker — each with their own licenses.
+
 ## License
 
 [MIT](LICENSE)
